@@ -15,6 +15,7 @@ import { Route as ComprasRouteImport } from './routes/compras'
 import { Route as DeudasRouteImport } from './routes/deudas'
 import { Route as DineroRouteImport } from './routes/dinero'
 import { Route as NotasRouteImport } from './routes/notas'
+import { Route as ReunionesRouteImport } from './routes/reuniones'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const NotasRoute = NotasRouteImport.update({
   path: '/notas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReunionesRoute = ReunionesRouteImport.update({
+  id: '/reuniones',
+  path: '/reuniones',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/deudas': typeof DeudasRoute
   '/dinero': typeof DineroRoute
   '/notas': typeof NotasRoute
+  '/reuniones': typeof ReunionesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/deudas': typeof DeudasRoute
   '/dinero': typeof DineroRoute
   '/notas': typeof NotasRoute
+  '/reuniones': typeof ReunionesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,14 +79,36 @@ export interface FileRoutesById {
   '/deudas': typeof DeudasRoute
   '/dinero': typeof DineroRoute
   '/notas': typeof NotasRoute
+  '/reuniones': typeof ReunionesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/agenda' | '/compras' | '/deudas' | '/dinero' | '/notas'
+  fullPaths:
+    | '/'
+    | '/agenda'
+    | '/compras'
+    | '/deudas'
+    | '/dinero'
+    | '/notas'
+    | '/reuniones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/agenda' | '/compras' | '/deudas' | '/dinero' | '/notas'
+  to:
+    | '/'
+    | '/agenda'
+    | '/compras'
+    | '/deudas'
+    | '/dinero'
+    | '/notas'
+    | '/reuniones'
   id:
-    '__root__' | '/' | '/agenda' | '/compras' | '/deudas' | '/dinero' | '/notas'
+    | '__root__'
+    | '/'
+    | '/agenda'
+    | '/compras'
+    | '/deudas'
+    | '/dinero'
+    | '/notas'
+    | '/reuniones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -88,6 +118,7 @@ export interface RootRouteChildren {
   DeudasRoute: typeof DeudasRoute
   DineroRoute: typeof DineroRoute
   NotasRoute: typeof NotasRoute
+  ReunionesRoute: typeof ReunionesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -134,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reuniones': {
+      id: '/reuniones'
+      path: '/reuniones'
+      fullPath: '/reuniones'
+      preLoaderRoute: typeof ReunionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -144,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   DeudasRoute: DeudasRoute,
   DineroRoute: DineroRoute,
   NotasRoute: NotasRoute,
+  ReunionesRoute: ReunionesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
