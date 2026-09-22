@@ -4,17 +4,17 @@ Contexto: asistente personal móvil (español), entrada por voz o texto, pensada
 comercializarse después. Basado en la especificación acordada previamente (Codex).
 
 ## Versión 1 (esta fase)
-- [ ] Sistema de diseño móvil según dirección elegida
-- [ ] Hoy: próximo compromiso, saldo, próximos pagos, pendientes
-- [ ] Captura por voz/texto con revisión antes de guardar (una frase → varios registros)
-- [ ] Dinero: cuentas, movimientos, categorías, pagos pendientes vs realizados
-- [ ] Deudas y arriendos: mensualidades, abonos, saldo, estado (pendiente/parcial/pagado)
-- [ ] Compras: listas por establecimiento, cantidades, marcar comprado, leer en voz alta
-- [ ] Notas: texto libre, listas con casillas, convertir frase en tarea
-- [ ] Agenda: fecha, hora, aviso previo configurable
-- [ ] Reuniones: grabar/importar, transcripción, resumen, compromisos, mapa mental
-- [ ] Espacios personalizables (Personal, JAC, Fundación… definidos por el usuario)
-- [ ] Persistencia local y metadatos SEO por pantalla
+- [x] Sistema de diseño móvil según dirección elegida
+- [x] Hoy: próximo compromiso, saldo, próximos pagos, pendientes
+- [x] Captura por voz/texto con revisión antes de guardar (una frase → varios registros)
+- [x] Dinero: cuentas, movimientos, categorías, pagos pendientes vs realizados
+- [x] Deudas y arriendos: mensualidades, abonos, saldo, estado (pendiente/parcial/pagado)
+- [x] Compras: listas por establecimiento, cantidades, marcar comprado, leer en voz alta
+- [x] Notas: texto libre, listas con casillas, convertir frase en tarea
+- [x] Agenda: fecha, hora, aviso previo configurable
+- [x] Reuniones: grabar/importar, transcripción, resumen, compromisos, mapa mental
+- [x] Espacios personalizables (Personal, JAC, Fundación… definidos por el usuario)
+- [x] Persistencia local y metadatos SEO por pantalla
 
 ## Después
 - [ ] Cuentas de usuario y respaldo en la nube
