@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgendaRouteImport } from './routes/agenda'
+import { Route as ComprasRouteImport } from './routes/compras'
+import { Route as DeudasRouteImport } from './routes/deudas'
+import { Route as DineroRouteImport } from './routes/dinero'
+import { Route as NotasRouteImport } from './routes/notas'
+import { Route as ReunionesRouteImport } from './routes/reuniones'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgendaRoute = AgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComprasRoute = ComprasRouteImport.update({
+  id: '/compras',
+  path: '/compras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeudasRoute = DeudasRouteImport.update({
+  id: '/deudas',
+  path: '/deudas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DineroRoute = DineroRouteImport.update({
+  id: '/dinero',
+  path: '/dinero',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotasRoute = NotasRouteImport.update({
+  id: '/notas',
+  path: '/notas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReunionesRoute = ReunionesRouteImport.update({
+  id: '/reuniones',
+  path: '/reuniones',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
+  '/compras': typeof ComprasRoute
+  '/deudas': typeof DeudasRoute
+  '/dinero': typeof DineroRoute
+  '/notas': typeof NotasRoute
+  '/reuniones': typeof ReunionesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
+  '/compras': typeof ComprasRoute
+  '/deudas': typeof DeudasRoute
+  '/dinero': typeof DineroRoute
+  '/notas': typeof NotasRoute
+  '/reuniones': typeof ReunionesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
+  '/compras': typeof ComprasRoute
+  '/deudas': typeof DeudasRoute
+  '/dinero': typeof DineroRoute
+  '/notas': typeof NotasRoute
+  '/reuniones': typeof ReunionesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/agenda'
+    | '/compras'
+    | '/deudas'
+    | '/dinero'
+    | '/notas'
+    | '/reuniones'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/agenda'
+    | '/compras'
+    | '/deudas'
+    | '/dinero'
+    | '/notas'
+    | '/reuniones'
+  id:
+    | '__root__'
+    | '/'
+    | '/agenda'
+    | '/compras'
+    | '/deudas'
+    | '/dinero'
+    | '/notas'
+    | '/reuniones'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgendaRoute: typeof AgendaRoute
+  ComprasRoute: typeof ComprasRoute
+  DeudasRoute: typeof DeudasRoute
+  DineroRoute: typeof DineroRoute
+  NotasRoute: typeof NotasRoute
+  ReunionesRoute: typeof ReunionesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agenda': {
+      id: '/agenda'
+      path: '/agenda'
+      fullPath: '/agenda'
+      preLoaderRoute: typeof AgendaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compras': {
+      id: '/compras'
+      path: '/compras'
+      fullPath: '/compras'
+      preLoaderRoute: typeof ComprasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/deudas': {
+      id: '/deudas'
+      path: '/deudas'
+      fullPath: '/deudas'
+      preLoaderRoute: typeof DeudasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dinero': {
+      id: '/dinero'
+      path: '/dinero'
+      fullPath: '/dinero'
+      preLoaderRoute: typeof DineroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notas': {
+      id: '/notas'
+      path: '/notas'
+      fullPath: '/notas'
+      preLoaderRoute: typeof NotasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reuniones': {
+      id: '/reuniones'
+      path: '/reuniones'
+      fullPath: '/reuniones'
+      preLoaderRoute: typeof ReunionesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgendaRoute: AgendaRoute,
+  ComprasRoute: ComprasRoute,
+  DeudasRoute: DeudasRoute,
+  DineroRoute: DineroRoute,
+  NotasRoute: NotasRoute,
+  ReunionesRoute: ReunionesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
