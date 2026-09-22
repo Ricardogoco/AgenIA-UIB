@@ -55,6 +55,7 @@ export function useVoz(alTexto?: (texto: string) => void) {
       let parcial = "";
       for (let i = e.resultIndex; i < e.results.length; i += 1) {
         const r = e.results[i];
+        if (!r) continue;
         if (r.isFinal) refFinal.current += `${r[0].transcript} `;
         else parcial += r[0].transcript;
       }
